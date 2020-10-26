@@ -1,0 +1,2 @@
+class Otumami < ApplicationRecord
+end

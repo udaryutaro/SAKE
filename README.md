@@ -1,7 +1,7 @@
 #俺のつまみ
 
 ## サイト概要
-- サイト自体は誰でも見れますが、おつまみを投稿する場合はログインしなければ見れない。
+- サイト自体は誰でも見れますが、おつまみを投稿する場合はログインしなければ見れない
 - 投稿に対していいねやコメントができる
 - 投稿された中からいいね数が多い3つをランキングで表示
 
@@ -18,6 +18,7 @@
 今夜のビールのお供を決める際に使われて欲しいと思っています
 
 ## 設計書
+https://docs.google.com/spreadsheets/d/1gOFBTBNjWV3YLorhl8GLs2olsNQlAXOrf70sq_JBvXU/edit#gid=1773513600
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1j6sHtQE3Hao4RXIFAwGOSielTTzfgtbyE2Xq9Mfv00k/edit#gid=0
