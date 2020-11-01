@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-xs-1"></div>
+	<div class="col-xs-7">
+		<h4><%= @otumami.title %></h4><br>
+		<%= attachment_image_tag(@otumami, :image, :fill, 500, 500, class: "otumami-image-show")%><br>
+		<%= @otumami.body %><br>
+		<h4><%= @otumami.user.nickname %> いいね数:<%= @otumami.favorites.count %></h4>
+
+		<% if @otumami.user_id = current_user.id %>
+			<%= link_to "編集", edit_otumami_path(@otumami.id), class: "btn btn-info "  %><br>
+			<%= link_to "削除", otumami_path, method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn-sm btn-danger destroy_book_37657"  %>
+		<% end %>
+
+	</div>
+	<div class="col-xs-4">
+		<h4>コメント</h4>
+	</div>
+</div>

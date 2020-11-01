@@ -1,0 +1,9 @@
+<h2>ジャンル追加</h2>
+
+<%= form_for(@otumami_genre) do |f| %>
+
+	<%= f.text_field :name %>
+
+	<%= f.submit '投稿', class: "btn btn-primary col-xs-12" %>
+
+<% end %>

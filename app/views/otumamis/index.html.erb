@@ -1,0 +1,17 @@
+<h1>おつまみ一覧</h1>
+	<div class="row">
+		<div class="col-xs-2">
+			<h5>ジャンルで探す</h5>
+	</div>
+
+	<div class="col-xs-10">
+		<% @otumami.each do |otumami|%>
+    	    	<div class="otumami">
+	    	    	<%= link_to otumami_path(otumami.id) do %>
+	    	    		<figure class="otumami-image"><%= attachment_image_tag(otumami, :image, :fill, 200, 200)%></figure>
+	    	    	<% end %><br>
+	    	    	<p><%= otumami.title%></p>
+    	    	</div>
+    	    <% end %>
+	</div>
+	</div>

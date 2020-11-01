@@ -1,0 +1,19 @@
+<h2>おつまみ投稿</h2>
+
+	<%= form_for(@otumami) do |f| %>
+
+		<h4>画像</h4>
+		<%= f.attachment_field :image %>
+
+		<h4>タイトル</h4>
+		<%= f.text_field :title %>
+
+		<h4>説明文</h4>
+		<%= f.text_field :body %>
+
+		<h4>ジャンル</h4>
+		<%= f.collection_select :otumami_genre_id, OtumamiGenre.all, :id, :name, :prompt => "選択して下さい" %>
+
+		<%= f.submit '投稿', class: "btn btn-primary col-xs-12" %>
+
+	<% end %>

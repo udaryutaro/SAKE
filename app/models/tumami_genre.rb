@@ -1,2 +1,0 @@
-class TumamiGenre < ApplicationRecord
-end

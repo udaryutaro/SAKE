@@ -1,2 +1,0 @@
-class OtumamiesController < ApplicationController
-end
