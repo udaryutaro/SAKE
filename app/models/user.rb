@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   #アソシエーション
   has_many :otumamis, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
 end

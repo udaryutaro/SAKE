@@ -20,6 +20,8 @@ class OtumamisController < ApplicationController
 
 	def show
 		@otumami = Otumami.find(params[:id])
+		@comment = Comment.new
+		@comments = @otumami.comments
 	end
 
 	def edit
@@ -27,11 +29,15 @@ class OtumamisController < ApplicationController
 	end
 
 	def update
-		
+		otumami = Otumami.find(params[:id])
+		otumami.update(otumami_params)
+		redirect_to otumami_path(otumami.id)
 	end
 
 	def destroy
-		
+		@otumami = Otumami.find(params[:id])
+		@otumami.destroy
+		redirect_to otumamis_path
 	end
 
 	private

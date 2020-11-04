@@ -1,0 +1,9 @@
+<h2><%= @user.nickname %>のおつまみ一覧</h2>
+
+<% @otumami.each do |otumami|%>
+    <div class="otumami">
+	    <%= link_to otumami_path(otumami.id) do %>
+	    	<figure class="otumami-image"><%= attachment_image_tag(otumami, :image, :fill, 200, 200)%></figure>
+	    <% end %><br>
+    </div>
+<% end %>
