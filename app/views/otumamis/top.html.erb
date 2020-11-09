@@ -1,1 +1,29 @@
-top
+<div class="row"></div><div class="main-visual">
+	<div class="main-visual-content">
+      <p class="main-visual-text">
+        俺のつまみ
+      </p>
+      <p class="main-visual-name">
+        〜ビールを愛するすべての人に最高の一品を紹介するサイトです〜
+      </p>
+    </div>
+</div>
+
+<section class="regular slider">
+    <div align="center"><%= image_tag 'adtDSC_6551-750x499.jpg' %></div>
+    <div align="center"><%= image_tag 'PP_yukke_TP_V.jpg' %></div>
+    <div align="center"><%= image_tag 'sakiikaIMGL1599_TP_V.jpg' %></div>
+</section>
+
+<script type="text/javascript">
+	$(function(){
+		$(".regular").slick({
+			dots:      true,
+			infinite:  true,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		});
+	});
+</script>

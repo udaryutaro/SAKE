@@ -7,9 +7,57 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <div class="title">
+            <h1>🍺俺のつまみ🍺</h1>
+          </div>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <div class="title">
+                <h5> <%= current_user.nickname %>さん！ ようこそ </h5>
+              </div>
+              <li>
+                <%= link_to "トップ", root_path, class: "glyphicon glyphicon-home" %>
+              </li>
+              <li>
+                <%= link_to "商品一覧", otumamis_path, class: "glyphicon glyphicon-otumami" %>
+              </li>
+              <li>
+                <%= link_to "商品登録",  new_otumami_path, class: "glyphicon glyphicon-new-otumami" %>
+              </li>
+              <li>
+                <%= link_to "いいね一覧",  new_otumami_path, class: "glyphicon glyphicon-new-otumami" %>
+              </li>
+              <li>
+                <%= link_to "退会",destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "トップ", root_path, class: "glyphicon glyphicon-home" %>
+              </li>
+              <li>
+                <%= link_to "商品一覧", home_about_path, class: "glyphicon glyphicon-otumami" %>
+              </li>
+              <li>
+                <%= link_to "新規登録", new_user_registration_path, class: "glyphicon glyphicon-edit" %>
+              </li>
+              <li>
+                <%= link_to "ログイン", new_user_session_path, class: "glyphicon glyphicon-log-in" %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
