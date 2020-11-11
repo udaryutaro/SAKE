@@ -1,3 +1,31 @@
 // Place all the styles related to the otumamies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.otumami-title{
+	margin-bottom: 20px;
+}
+.otumami-title-all{
+	margin-top: -20px;
+	margin-bottom: 20px;
+}
+.otumami{
+	display: inline-block;
+	margin-right: 16px;
+	margin-bottom: 16px;
+}
+.otumami-image {
+ margin-bottom: 16px;
+ overflow: hidden;
+ height: 200px;
+}
+.otumami-image img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.otumami-image img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

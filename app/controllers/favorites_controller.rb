@@ -1,5 +1,11 @@
 class FavoritesController < ApplicationController
 
+	def index
+    	@user = current_user
+    	@favorites = Favorite.where(user_id: @user.id).all
+  	end
+
+
 	def create
 		otumami = Otumami.find(params[:otumami_id])
 		favorite = Favorite.new(params[:id])

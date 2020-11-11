@@ -16,6 +16,17 @@ class OtumamisController < ApplicationController
 
 	def index
 		@otumami = Otumami.all
+		@otumami_genres = OtumamiGenre.all
+		# urlにcategory_id(params)がある場合
+        if params[:otumami_genre_id]
+		    # Categoryのデータベースのテーブルから一致するidを取得
+		    @otumami_genre = OtumamiGenre.find(params[:otumami_genre_id])
+		    # category_idと紐づく投稿を取得
+		    @otumamis = @otumami_genre.otumamis.order(created_at: :desc).all.page(params[:page]).per(8)
+		else
+		    # 投稿すべてを取得
+	        @otumamis = Otumami.order(created_at: :desc).all.page(params[:page]).per(8)
+    	end
 	end
 
 	def show

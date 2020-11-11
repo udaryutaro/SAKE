@@ -1,0 +1,15 @@
+<h2>いいね一覧</h2>
+
+<table class="table table-hover">
+	<tr>
+		<th>おつまみ</th>
+		<th>詳細</th>
+	</tr>
+	<% @favorites.each do |favorite| %>
+	<tr>
+		<td><%= favorite.otumami.title%></td>
+		<td><%= link_to "表示する", otumami_path(favorite.otumami.id), class: "btn botan" %></td>
+	</tr>
+	<%end%>
+</table>
+

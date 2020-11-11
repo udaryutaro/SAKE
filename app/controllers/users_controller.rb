@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     redirect_to user_path(user.id)
   end
 
+  def favorites
+    @favorites = current_user.favorites
+  end
+
+
   private
   def user_params
   params.require(:user).permit(:name, :nickname, :phone)
