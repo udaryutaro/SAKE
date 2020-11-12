@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :otumamis, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  #has_many :favorited_otumamis, through: :favorites, source: :otumami
 
 end
