@@ -46,7 +46,12 @@ class OtumamisController < ApplicationController
 
 	def update
 		otumami = Otumami.find(params[:id])
+		otumami.tags.destroy_all
 		otumami.update(otumami_params)
+		tags = Vision.get_image_data(otumami.image)
+    	tags.each do |tag|
+      		otumami.tags.create(name: tag)
+    	end
 		redirect_to otumami_path(otumami.id)
 	end
 
