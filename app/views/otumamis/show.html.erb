@@ -22,9 +22,13 @@
 
 		</h4>
 
+		<% @otumami.tags.each do |tag| %>
+  			<span class="label"><%= tag.name %></span>
+		<% end %><br>
+
 		<% if @otumami.user_id = current_user.id %>
-			<%= link_to "編集", edit_otumami_path(@otumami.id), class: "btn btn-info "  %><br>
-			<%= link_to "削除", otumami_path, method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn-sm btn-danger destroy_book_37657"  %>
+			<%= link_to "編集", edit_otumami_path(@otumami.id), class: "btn btn-info "  %>
+			<%= link_to "削除", otumami_path, method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn btn-danger"  %>
 		<% end %>
 
 	</div>

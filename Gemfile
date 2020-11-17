@@ -79,5 +79,8 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 
+#API関係
+gem 'dotenv-rails'
+
 end
 #--ここまで

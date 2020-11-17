@@ -3,6 +3,7 @@ class Otumami < ApplicationRecord
 	#アソシエーション
 	has_many :comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
+	has_many :tags, dependent: :destroy
 	#has_many :favorited, through: :favorites, source: :user
 
 	#いいね機能

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_100409) do
+ActiveRecord::Schema.define(version: 2020_11_17_064718) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2020_10_25_100409) do
     t.integer "user_id", null: false
     t.integer "otumami_genre_id", null: false
     t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "otumami_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

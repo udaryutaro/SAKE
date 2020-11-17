@@ -12,6 +12,10 @@ class OtumamisController < ApplicationController
 		otumami = Otumami.new(otumami_params)
 		otumami.user_id = current_user.id
 		otumami.save
+		tags = Vision.get_image_data(otumami.image)
+    	tags.each do |tag|
+      		otumami.tags.create(name: tag)
+    	end
 		redirect_to otumamis_path
 	end
 
