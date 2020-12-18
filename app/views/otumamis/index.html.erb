@@ -1,11 +1,14 @@
 <h1>おつまみ一覧</h1>
 <div class="row">
 	<div class="col-xs-2">
-		<h5>ジャンルで探す</h5>
-		<h5><%= link_to "すべてのジャンル", otumamis_path %></h5></h5>
-		<% @otumami_genres.each do |otumami_genre| %>
-			<h5 class="genrelist"><%= link_to otumami_genre.name, otumamis_path(otumami_genre_id: otumami_genre.id) %></h5>
-		<% end %>
+		<div class="genre">
+			
+			<h5>ジャンルで探す</h5>
+			<h5><%= link_to "すべてのジャンル", otumamis_path %></h5></h5>
+			<% @otumami_genres.each do |otumami_genre| %>
+				<h5 class="genrelist"><%= link_to otumami_genre.name, otumamis_path(otumami_genre_id: otumami_genre.id) %></h5>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="col-xs-10 otumami-index">
